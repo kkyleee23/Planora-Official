@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planora - Plan smarter. Achieve more.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo">
+                <svg class="logo-icon" viewBox="0 0 120 120" width="36" height="36">
+                    <rect x="8" y="8" width="104" height="104" rx="20" fill="#FF8A3D"/>
+                    <rect x="35" y="30" width="50" height="64" rx="4" fill="#fff"/>
+                    <rect x="48" y="26" width="24" height="10" rx="2" fill="#2D3748"/>
+                    <polyline points="43,50 48,55 58,43" fill="none" stroke="#FF8A3D" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="62" y1="50" x2="77" y2="50" stroke="#2D3748" stroke-width="3" stroke-linecap="round"/>
+                    <polyline points="43,65 48,70 58,58" fill="none" stroke="#FF8A3D" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="62" y1="65" x2="77" y2="65" stroke="#2D3748" stroke-width="3" stroke-linecap="round"/>
+                    <rect x="43" y="76" width="10" height="10" rx="1" fill="none" stroke="#CBD5E0" stroke-width="2.5"/>
+                    <line x1="62" y1="81" x2="77" y2="81" stroke="#CBD5E0" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+                <span>Planora</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#features">Features</a>
+                <a href="#nora">Nora</a>
+                <a href="#updates">Updates</a>
+                <a href="#gallery">Gallery</a>
+                <a href="app/index.html" class="btn btn-sm btn-primary">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    Web
+                </a>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="themeIcon">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+            <button class="mobile-menu-btn" id="menuBtn" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-layout">
+                <div class="hero-text">
+                    <span class="version-badge">v2.0.0 — Major Release</span>
+                    <p class="hero-eyebrow">A task manager that stays out of your way</p>
+                    <h1>Stop planning.<br>Start <span class="highlight">doing.</span></h1>
+                    <p class="hero-desc">Planora keeps your tasks, notes, and goals in one place. No account walls, no bloat, no ads. Just open it and get things done.</p>
+                    <div class="hero-actions">
+                        <a href="app/index.html" class="btn btn-primary">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                            Try On Web
+                        </a>
+                        <a href="https://www.mediafire.com/file/4m67jdb3ktlst88/planora_major-release_v2.0.0.apk/file" class="btn btn-outline">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            Download APK
+                        </a>
+                    </div>
+                    <div class="hero-proof">
+                        <div class="proof-item">
+                            <span class="proof-num">100%</span>
+                            <span class="proof-label">Free, no ads</span>
+                        </div>
+                        <div class="proof-dot"></div>
+                        <div class="proof-item">
+                            <span class="proof-num">Offline</span>
+                            <span class="proof-label">Works anywhere</span>
+                        </div>
+                        <div class="proof-dot"></div>
+                        <div class="proof-item">
+                            <span class="proof-num">&lt; 5MB</span>
+                            <span class="proof-label">Lightweight</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="phone-frame">
+                        <div class="phone-screen">
+                            <div class="mock-bar">
+                                <span class="mock-time">9:41</span>
+                                <div class="mock-dots"><span></span><span></span><span></span></div>
+                            </div>
+                            <div class="mock-app-header">
+                                <span class="mock-app-title">Dashboard</span>
+                                <span class="mock-date-label">Today</span>
+                            </div>
+                            <div class="mock-quote-card">
+                                <p>"Done is better than perfect."</p>
+                            </div>
+                            <div class="mock-stats">
+                                <div class="mock-stat"><strong>12</strong><span>Total</span></div>
+                                <div class="mock-stat accent"><strong>8</strong><span>Done</span></div>
+                                <div class="mock-stat"><strong>4</strong><span>Left</span></div>
+                            </div>
+                            <div class="mock-task-list">
+                                <div class="mock-task completed">
+                                    <div class="mock-accent high"></div>
+                                    <div class="mock-check on"></div>
+                                    <div class="mock-info"><span>Morning workout</span><small>7:00 AM</small></div>
+                                </div>
+                                <div class="mock-task completed">
+                                    <div class="mock-accent medium"></div>
+                                    <div class="mock-check on"></div>
+                                    <div class="mock-info"><span>Review lecture notes</span><small>9:00 AM</small></div>
+                                </div>
+                                <div class="mock-task">
+                                    <div class="mock-accent high"></div>
+                                    <div class="mock-check"></div>
+                                    <div class="mock-info"><span>Submit assignment</span><small>2:00 PM &middot; Due in 3h</small></div>
+                                </div>
+                                <div class="mock-task">
+                                    <div class="mock-accent low"></div>
+                                    <div class="mock-check"></div>
+                                    <div class="mock-info"><span>Read 30 pages</span><small>6:00 PM</small></div>
+                                </div>
+                            </div>
+                            <div class="mock-fab">+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- feats. -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-label">What you get</div>
+            <h2>Tools that actually help,<br>without the clutter.</h2>
+            <div class="features-grid">
+                <div class="f-card">
+                    <div class="f-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF8A3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+                    </div>
+                    <h3>Tasks & Priorities</h3>
+                    <p>Add tasks with high, medium, or low priority. See what matters at a glance with colored accent bars and badges.</p>
+                </div>
+                <div class="f-card">
+                    <div class="f-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF8A3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <h3>Reminders & Deadlines</h3>
+                    <p>Set reminders that actually show up on your lock screen. See live countdowns like "Due in 2d 5h" so nothing slips.</p>
+                </div>
+                <div class="f-card">
+                    <div class="f-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF8A3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    </div>
+                    <h3>Progress & Streaks</h3>
+                    <p>Weekly charts, completion rates, and streaks. Watch your consistency grow and unlock achievement badges.</p>
+                </div>
+                <div class="f-card">
+                    <div class="f-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF8A3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    </div>
+                    <h3>Calendar View</h3>
+                    <p>See your month at a glance. Dots show which days have tasks. Tap any day to see what's planned.</p>
+                </div>
+                <div class="f-card">
+                    <div class="f-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF8A3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                    </div>
+                    <h3>Notes</h3>
+                    <p>Quick notes with rich text, color labels, and pin-to-top. Search across everything instantly.</p>
+                </div>
+                <div class="f-card">
+                    <div class="f-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF8A3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    </div>
+                    <h3>Focus Timer</h3>
+                    <p>Built-in Pomodoro timer. Pick a task, hit start, and lock in for 25 minutes of deep work.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="how-section">
+        <div class="container">
+            <div class="section-label">How it works</div>
+            <h2>Three steps. That's it.</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-body">
+                        <h3>Add your tasks</h3>
+                        <p>Type what you need to do, pick a date and priority, and you're set. Natural language input lets you type things like "Submit report tomorrow at 3pm" and it just works.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-body">
+                        <h3>Work through your day</h3>
+                        <p>Your dashboard shows today's tasks sorted by priority. Check them off as you go. The progress bar fills up. Reminders nudge you before deadlines hit.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-body">
+                        <h3>See your progress grow</h3>
+                        <p>Weekly charts and completion streaks show you're improving. Unlock badges for milestones. End your day with a quick reflection on how it went.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- nora -->
+    <section id="nora" class="nora-section">
+        <div class="container">
+            <div class="section-label">Meet Nora</div>
+            <h2>Your built-in AI assistant.</h2>
+            <p>Nora lives inside Planora. Ask her to create tasks, check your schedule, or just chat. No internet required.</p>
+            <div class="nora-layout">
+                <div class="nora-features">
+                    <div class="nora-feat">
+                        <div class="nora-feat-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF8A3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                        </div>
+                        <div>
+                            <h4>Natural language</h4>
+                            <p>Say "add meeting tomorrow at 3pm" and Nora creates the task with the right date, time, and priority.</p>
+                        </div>
+                    </div>
+                    <div class="nora-feat">
+                        <div class="nora-feat-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF8A3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        </div>
+                        <div>
+                            <h4>Context-aware</h4>
+                            <p>Nora knows what screen you're on and what you last talked about. Follow-ups like "mark it done" just work.</p>
+                        </div>
+                    </div>
+                    <div class="nora-feat">
+                        <div class="nora-feat-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF8A3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                        </div>
+                        <div>
+                            <h4>Guided creation</h4>
+                            <p>Just say "add a task" and Nora walks you through title, date, and priority step by step.</p>
+                        </div>
+                    </div>
+                    <div class="nora-feat">
+                        <div class="nora-feat-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF8A3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+                        </div>
+                        <div>
+                            <h4>Smart nudges</h4>
+                            <p>Nora sends periodic reminders during the day. Quiet hours built in, fully configurable.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="nora-chat-visual">
+                    <div class="nora-chat-frame">
+                        <div class="nora-chat-screen">
+                            <div class="nora-chat-header">
+                                <div class="nora-avatar">N</div>
+                                <div class="nora-chat-header-text">
+                                    <span>Nora</span>
+                                    <small>Online</small>
+                                </div>
+                            </div>
+                            <div class="nora-chat-body">
+                                <div class="chat-bubble user">What do I have today?</div>
+                                <div class="chat-bubble nora">
+                                    You have 3 tasks for today:
+                                    <div class="chat-mini-task"><span class="cmt-dot done"></span><span class="done-text">Morning workout</span></div>
+                                    <div class="chat-mini-task"><span class="cmt-dot red"></span><span>Submit assignment</span></div>
+                                    <div class="chat-mini-task"><span class="cmt-dot yellow"></span><span>Grocery shopping</span></div>
+                                </div>
+                                <div class="chat-bubble user">Complete the second one</div>
+                                <div class="chat-bubble nora">Done! "Submit assignment" is marked as complete.</div>
+                            </div>
+                            <div class="nora-chat-chips">
+                                <span class="nora-chip">My progress</span>
+                                <span class="nora-chip">Start focus</span>
+                                <span class="nora-chip">Add a task</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- patch -->
+    <section id="updates" class="updates-section">
+        <div class="container">
+            <div class="section-label">What's new</div>
+            <h2>Latest updates &amp; patches</h2>
+            <div class="updates-timeline">
+
+                <div class="update-card latest">
+                    <div class="update-header">
+                        <span class="update-version">v2.0.0</span>
+                        <span class="update-date">May 10, 2026</span>
+                        <span class="update-tag new">Major Release</span>
+                    </div>
+                    <h3>Complete UI Overhaul</h3>
+                    <p>Every screen in Planora has been redesigned from the ground up. New animations, polished cards, and a cohesive visual identity across the entire app.</p>
+                    <ul class="update-list">
+                        <li><strong>Login &amp; Register redesign</strong> — Orange gradient headers, outlined input fields, inline validation</li>
+                        <li><strong>Home screen polish</strong> — New greeting card with time-of-day message, MaterialCardView wrappers, stroke borders</li>
+                        <li><strong>Notes masonry layout</strong> — Staggered 2-column grid, color accent strips, improved typography</li>
+                        <li><strong>Progress screen refresh</strong> — Card wrappers, consistent fonts, refined circular indicator</li>
+                        <li><strong>Profile screen polish</strong> — Card sections for stats, settings, and data management</li>
+                        <li><strong>Smooth transitions</strong> — Slide, fade, and scale animations on every screen change</li>
+                        <li><strong>Dark mode audit</strong> — Fixed all hardcoded colors, every screen adapts properly</li>
+                        <li><strong>Focus Timer service</strong> — Runs as a foreground notification with pause, resume, and stop controls</li>
+                        <li><strong>Bottom nav &amp; FAB</strong> — Rounded corners on nav bar, squircle FAB shape</li>
+                    </ul>
+                </div>
+
+                <div class="update-card">
+                    <div class="update-header">
+                        <span class="update-version">v1.6.0</span>
+                        <span class="update-date">May 8, 2026</span>
+                        <span class="update-tag new">New Feature</span>
+                    </div>
+                    <h3>Organization &amp; Onboarding</h3>
+                    <p>Drag your tasks into order, manage subtasks, back up your data, and welcome new users with a guided onboarding flow.</p>
+                    <ul class="update-list">
+                        <li><strong>Drag-to-reorder tasks</strong> — Hold the drag handle to rearrange tasks, positions persist across sessions</li>
+                        <li><strong>Subtask management</strong> — Interactive checkboxes, add/delete subtasks, progress counter on cards</li>
+                        <li><strong>Undo on complete &amp; delete</strong> — Snackbar with undo action restores tasks with all fields</li>
+                        <li><strong>Backup &amp; restore</strong> — Export all data as JSON, import it back anytime</li>
+                        <li><strong>Home screen widget</strong> — See today's tasks at a glance, tap "+" to add new ones</li>
+                        <li><strong>Multi-turn task creation</strong> — Nora guides you step by step: title, date, then priority</li>
+                        <li><strong>Better date parsing</strong> — "Friday", "in 3 days", "day after tomorrow", "5/10" all work</li>
+                        <li><strong>Onboarding flow</strong> — 3-page welcome walkthrough for new users</li>
+                        <li><strong>Empty states</strong> — Context-aware illustrations when task lists are empty</li>
+                    </ul>
+                </div>
+
+                <div class="update-card">
+                    <div class="update-header">
+                        <span class="update-version">v1.5.0</span>
+                        <span class="update-date">May 6, 2026</span>
+                        <span class="update-tag improvement">Improvements</span>
+                    </div>
+                    <h3>Smarter Nora &amp; Task Details</h3>
+                    <p>Nora now understands virtually everything you throw at her, plus new task management features across the board.</p>
+                    <ul class="update-list">
+                        <li><strong>Nora understands everything</strong> — Implicit intents, contextual yes/no, smart fallback with suggestions</li>
+                        <li><strong>Scheduling conflict detection</strong> — Warns you when tasks overlap on the same date and time</li>
+                        <li><strong>Overdue task badge</strong> — Red badge on the Tasks tab shows how many tasks are past due</li>
+                        <li><strong>Category filter chips</strong> — Filter tasks by category with horizontal chip bar</li>
+                        <li><strong>Recurring task indicators</strong> — Repeat icon and label shown on recurring task cards</li>
+                        <li><strong>Notes color picker overhaul</strong> — Visual color grid with separate text and highlight palettes</li>
+                        <li><strong>Chat export</strong> — Export your Nora conversation as plain text or styled HTML</li>
+                    </ul>
+                </div>
+
+                <div class="update-card">
+                    <div class="update-header">
+                        <span class="update-version">v1.4.0</span>
+                        <span class="update-date">May 5, 2026</span>
+                        <span class="update-tag new">New Feature</span>
+                    </div>
+                    <h3>Notifications &amp; Personalization</h3>
+                    <p>Reliable reminders that survive app kills and reboots, plus ways to make Nora feel like your own assistant.</p>
+                    <ul class="update-list">
+                        <li><strong>Reliable notifications</strong> — AlarmManager.setAlarmClock() bypasses Doze and OEM battery killers</li>
+                        <li><strong>Daily reminders toggle &amp; custom time</strong> — Choose when Nora sends your daily task summary</li>
+                        <li><strong>Nora Nudges toggle</strong> — Enable or disable periodic smart nudge notifications</li>
+                        <li><strong>Nora personality picker</strong> — Choose Casual, Professional, or Friendly tone in settings</li>
+                        <li><strong>Message reactions</strong> — Thumbs up/down on Nora's messages with animated feedback</li>
+                        <li><strong>Weekly review</strong> — Guided weekly summary with wins, areas for attention, and a productivity score</li>
+                    </ul>
+                </div>
+
+                <div class="update-card">
+                    <div class="update-header">
+                        <span class="update-version">v1.3.0</span>
+                        <span class="update-date">May 3, 2026</span>
+                        <span class="update-tag improvement">Improvements</span>
+                    </div>
+                    <h3>Nora Chat Polish</h3>
+                    <p>The Nora chat experience gets a major upgrade with voice input, quick replies, and smarter context awareness.</p>
+                    <ul class="update-list">
+                        <li><strong>Quick reply chips</strong> — Contextual suggestion chips wired end-to-end</li>
+                        <li><strong>Voice input</strong> — Tap the mic to speak your message to Nora</li>
+                        <li><strong>Screen awareness</strong> — Nora knows which screen you're on and adapts suggestions</li>
+                        <li><strong>Inline card actions</strong> — Tap task cards to complete, long-press to delete</li>
+                        <li><strong>Haptic feedback</strong> — Subtle vibrations on responses, chip taps, and card actions</li>
+                        <li><strong>Markdown formatting</strong> — Bold text support in chat messages</li>
+                        <li><strong>Smart Nora Nudges</strong> — Periodic motivational notifications with quiet hours</li>
+                        <li><strong>Conversation search</strong> — Search icon to filter through chat history</li>
+                        <li><strong>Swipe-to-copy</strong> — Swipe left on any bubble to copy its text</li>
+                    </ul>
+                </div>
+
+                <div class="update-card">
+                    <div class="update-header">
+                        <span class="update-version">v1.2.0</span>
+                        <span class="update-date">April 30, 2026</span>
+                        <span class="update-tag new">New Feature</span>
+                    </div>
+                    <h3>Meet Nora — Your AI Assistant</h3>
+                    <p>Planora now has a built-in AI assistant named Nora. Tap the chat bubble on your dashboard to start a conversation.</p>
+                    <ul class="update-list">
+                        <li><strong>Natural language task creation</strong> — Say "Create a high priority task called Update AI deadline Apr 30" and Nora handles the rest</li>
+                        <li><strong>Smart conversations</strong> — Nora understands follow-ups, so you can build tasks step by step</li>
+                        <li><strong>Casual chat</strong> — Ask for jokes, motivation, or just say hi. Nora has personality</li>
+                        <li><strong>Quick actions</strong> — Complete tasks, search, start focus sessions, check progress — all through chat</li>
+                        <li><strong>Chat history</strong> — Your conversation persists between sessions, including action cards</li>
+                        <li><strong>Suggestion chips</strong> — Quick-start prompts to get you going</li>
+                    </ul>
+                </div>
+
+                <div class="update-card">
+                    <div class="update-header">
+                        <span class="update-version">v1.1.2</span>
+                        <span class="update-date">April 20, 2026</span>
+                        <span class="update-tag fix">Bug Fixes</span>
+                    </div>
+                    <h3>Stability &amp; Polish</h3>
+                    <p>A round of fixes to make everything smoother.</p>
+                    <ul class="update-list">
+                        <li>Fixed fragment navigation overlay stacking issues</li>
+                        <li>Fixed focus timer leak on fragment destroy</li>
+                        <li>Fixed snooze crash in notification quick actions</li>
+                        <li>Daily motivation quote now rotates (31 quotes)</li>
+                        <li>Alarm scheduling no longer fires for past times</li>
+                    </ul>
+                </div>
+
+                <div class="update-card">
+                    <div class="update-header">
+                        <span class="update-version">v1.1.0</span>
+                        <span class="update-date">April 10, 2026</span>
+                        <span class="update-tag improvement">Improvements</span>
+                    </div>
+                    <h3>Notes, Achievements &amp; Focus Mode</h3>
+                    <p>Major feature drop with personal notes, achievement badges, and the Pomodoro focus timer.</p>
+                    <ul class="update-list">
+                        <li>Personal notes with rich text, color labels, pin-to-top, and search</li>
+                        <li>10 achievement badges (task milestones, streaks, early bird, deep focus)</li>
+                        <li>Focus mode with Pomodoro timer and task attachment</li>
+                        <li>Lock screen notifications with Complete / Snooze actions</li>
+                        <li>Daily reflection dialog with mood rating</li>
+                        <li>Natural language task input via "Add task" dialog</li>
+                    </ul>
+                </div>
+
+                <div class="update-card">
+                    <div class="update-header">
+                        <span class="update-version">v1.0.0</span>
+                        <span class="update-date">March 25, 2026</span>
+                        <span class="update-tag">Launch</span>
+                    </div>
+                    <h3>Initial Release</h3>
+                    <p>Planora goes live. Tasks, priorities, deadlines, calendar view, progress tracking, and dark mode — all in under 5MB.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- prev -->
+    <section id="preview" class="preview-section">
+        <div class="container">
+            <div class="section-label">How it looks</div>
+            <h2>Every screen, designed to<br>keep you moving.</h2>
+            <div class="preview-tabs">
+                <button class="preview-tab active" data-tab="tasks">Tasks</button>
+                <button class="preview-tab" data-tab="progress">Progress</button>
+                <button class="preview-tab" data-tab="focus">Focus</button>
+            </div>
+            <div class="preview-content">
+                <div class="preview-pane active" id="preview-tasks">
+                    <div class="preview-desc">
+                        <h3>Manage everything in one list</h3>
+                        <p>Filter by Today, This Week, or All. Search across tasks. Each one shows its priority, time, and how long until it's due. Long-press for details, subtasks, and focus mode.</p>
+                        <ul class="preview-bullets">
+                            <li>Color-coded priority bars (red / yellow / blue)</li>
+                            <li>Live deadline countdowns</li>
+                            <li>Subtasks and notes per task</li>
+                            <li>Swipe or long-press actions</li>
+                        </ul>
+                    </div>
+                    <div class="preview-phone-wrap">
+                        <div class="preview-phone">
+                            <div class="preview-screen">
+                                <div class="ps-top">My Tasks</div>
+                                <div class="ps-tabs"><span class="active">Today</span><span>This Week</span><span>All</span></div>
+                                <div class="ps-task"><div class="ps-bar high"></div><div class="ps-chk on"></div><div class="ps-info"><span class="done">Study for exam</span><small>9:00 AM</small></div><div class="ps-badge high">H</div></div>
+                                <div class="ps-task"><div class="ps-bar high"></div><div class="ps-chk"></div><div class="ps-info"><span>Submit project</span><small>11:30 AM &middot; Due in 2h</small></div><div class="ps-badge high">H</div></div>
+                                <div class="ps-task"><div class="ps-bar medium"></div><div class="ps-chk"></div><div class="ps-info"><span>Grocery shopping</span><small>2:00 PM</small></div><div class="ps-badge med">M</div></div>
+                                <div class="ps-task"><div class="ps-bar low"></div><div class="ps-chk"></div><div class="ps-info"><span>Read 30 pages</span><small>6:00 PM</small></div><div class="ps-badge low">L</div></div>
+                                <div class="ps-task"><div class="ps-bar medium"></div><div class="ps-chk on"></div><div class="ps-info"><span class="done">Call dentist</span><small>8:00 AM</small></div><div class="ps-badge med">M</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="preview-pane" id="preview-progress">
+                    <div class="preview-desc">
+                        <h3>Track your consistency</h3>
+                        <p>A circular progress ring shows your overall completion rate. Below it, see breakdowns by day, your current streak, and achievement badges you've unlocked.</p>
+                        <ul class="preview-bullets">
+                            <li>Circular completion indicator</li>
+                            <li>Daily breakdown bars</li>
+                            <li>Streak counter</li>
+                            <li>10 achievement badges to unlock</li>
+                        </ul>
+                    </div>
+                    <div class="preview-phone-wrap">
+                        <div class="preview-phone">
+                            <div class="preview-screen">
+                                <div class="ps-top">Progress</div>
+                                <div class="ps-circle-wrap">
+                                    <svg viewBox="0 0 100 100" width="110" height="110">
+                                        <circle cx="50" cy="50" r="42" fill="none" stroke="#F0F0F0" stroke-width="8"/>
+                                        <circle cx="50" cy="50" r="42" fill="none" stroke="#FF8A3D" stroke-width="8" stroke-dasharray="198 66" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+                                    </svg>
+                                    <div class="ps-circle-label"><strong>75%</strong><span>Done</span></div>
+                                </div>
+                                <div class="ps-breakdown">
+                                    <div class="ps-brow"><span>Completed</span><div class="ps-btrack"><div class="ps-bfill orange" style="width:75%"></div></div><span>18</span></div>
+                                    <div class="ps-brow"><span>Pending</span><div class="ps-btrack"><div class="ps-bfill gray" style="width:25%"></div></div><span>6</span></div>
+                                    <div class="ps-brow"><span>Streak</span><div class="ps-btrack"><div class="ps-bfill green" style="width:60%"></div></div><span>5d</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="preview-pane" id="preview-focus">
+                    <div class="preview-desc">
+                        <h3>Deep work, built in</h3>
+                        <p>The Pomodoro focus timer helps you commit to 25 minutes of uninterrupted work on a single task. Complete a session to unlock the "Deep Focus" badge.</p>
+                        <ul class="preview-bullets">
+                            <li>25-minute Pomodoro sessions</li>
+                            <li>Attach a specific task</li>
+                            <li>Pause and resume anytime</li>
+                            <li>Unlocks Deep Focus achievement</li>
+                        </ul>
+                    </div>
+                    <div class="preview-phone-wrap">
+                        <div class="preview-phone">
+                            <div class="preview-screen focus-screen">
+                                <div class="ps-top">Focus Mode</div>
+                                <div class="ps-focus-task">Focusing on: Submit project</div>
+                                <div class="ps-timer-wrap">
+                                    <svg viewBox="0 0 100 100" width="130" height="130">
+                                        <circle cx="50" cy="50" r="42" fill="none" stroke="#F0F0F0" stroke-width="6"/>
+                                        <circle cx="50" cy="50" r="42" fill="none" stroke="#FF8A3D" stroke-width="6" stroke-dasharray="172 92" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+                                    </svg>
+                                    <div class="ps-timer-text">18:24</div>
+                                </div>
+                                <div class="ps-focus-btns">
+                                    <span class="ps-fbtn active">Pause</span>
+                                    <span class="ps-fbtn">Reset</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- gallery -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <div class="section-label">Inside the app</div>
+            <h2>See it for yourself.</h2>
+            <p>Real screenshots from Planora v2.0.0 — light mode, dark mode, and everything in between.</p>
+            <div class="gallery-track">
+                <div class="gallery-item">
+                    <div class="gallery-phone"><img src="../docu/screenshots/dashboard_home.png" alt="Dashboard" loading="lazy"></div>
+                    <div class="gallery-label">Dashboard</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-phone"><img src="../docu/screenshots/task_screen.png" alt="Tasks" loading="lazy"></div>
+                    <div class="gallery-label">Tasks</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-phone"><img src="../docu/screenshots/notes_screen.png" alt="Notes" loading="lazy"></div>
+                    <div class="gallery-label">Notes</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-phone"><img src="../docu/screenshots/note_editor.png" alt="Note Editor" loading="lazy"></div>
+                    <div class="gallery-label">Note Editor</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-phone"><img src="../docu/screenshots/progress_screen.png" alt="Progress" loading="lazy"></div>
+                    <div class="gallery-label">Progress</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-phone"><img src="../docu/screenshots/focus_screeen.png" alt="Focus Timer" loading="lazy"></div>
+                    <div class="gallery-label">Focus Timer</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-phone"><img src="../docu/screenshots/calendar_screen.png" alt="Calendar" loading="lazy"></div>
+                    <div class="gallery-label">Calendar</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-phone"><img src="../docu/screenshots/dark_mode.png" alt="Dark Mode" loading="lazy"></div>
+                    <div class="gallery-label">Dark Mode</div>
+                </div>
+            </div>
+            <div class="gallery-scroll-hint">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                <span>Scroll to see more</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="webapp-cta">
+        <div class="container">
+            <div class="cta-box">
+                <div class="cta-text">
+                    <h2>Use Planora on the web</h2>
+                    <p>Don't want to install anything? The full web version works right in your browser. Same features, same design, zero downloads.</p>
+                </div>
+                <a href="app/index.html" class="btn btn-primary btn-lg">Open Web App</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- dl -->
+    <section id="download" class="download-section">
+        <div class="container">
+            <div class="download-content">
+                <div class="section-label">Get the app</div>
+                <h2>Carry your plan everywhere.</h2>
+                <p class="download-desc">Available on Android. Free forever, no sign-up required. Under 5MB so it installs in seconds.</p>
+                <div class="download-btns">
+                    <a href="https://www.mediafire.com/file/4m67jdb3ktlst88/planora_major-release_v2.0.0.apk/file" class="btn btn-dark">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Download APK
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-left">
+                <a href="#" class="logo">
+                    <svg class="logo-icon" viewBox="0 0 120 120" width="28" height="28">
+                        <rect x="8" y="8" width="104" height="104" rx="20" fill="#FF8A3D"/>
+                        <rect x="35" y="30" width="50" height="64" rx="4" fill="#fff"/>
+                        <rect x="48" y="26" width="24" height="10" rx="2" fill="#2D3748"/>
+                        <polyline points="43,50 48,55 58,43" fill="none" stroke="#FF8A3D" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <line x1="62" y1="50" x2="77" y2="50" stroke="#2D3748" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                    <span>Planora</span>
+                </a>
+                <p>Plan smarter. Achieve more.</p>
+            </div>
+            <div class="footer-nav">
+                <a href="#features">Features</a>
+                <a href="#nora">Nora</a>
+                <a href="#updates">Updates</a>
+                <a href="#gallery">Gallery</a>
+                <a href="app/index.html">Web App</a>
+                <a href="#download">Download</a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>2026 Planora. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
