@@ -6,7 +6,7 @@
     <title>Planora</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="app.css">
 </head>
 <body>
@@ -145,11 +145,9 @@
 
             <!-- Dashboard -->
             <section id="sec-dashboard" class="section">
-                <div class="section-header">
-                    <div>
-                        <h1 id="greeting"></h1>
-                        <p id="today-date" class="text-muted"></p>
-                    </div>
+                <div class="greeting-card">
+                    <h1 id="greeting"></h1>
+                    <p id="today-date"></p>
                 </div>
                 <p id="daily-quote" class="daily-quote"></p>
                 <div class="stats-row">
@@ -182,7 +180,20 @@
             <section id="sec-tasks" class="section" style="display:none;">
                 <div class="section-header">
                     <h1>Tasks</h1>
-                    <button id="btn-add-task" class="btn-primary btn-sm">+ New Task</button>
+                    <div class="section-header-actions">
+                        <div class="sort-wrapper">
+                            <button id="btn-sort-tasks" class="btn-icon" title="Sort tasks">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3,18h6v-2H3v2zM3,6v2h18V6H3zm0,7h12v-2H3v2z" fill="currentColor"/></svg>
+                            </button>
+                            <div id="sort-dropdown" class="sort-dropdown" style="display:none;">
+                                <button class="sort-option active" data-sort="default">Default</button>
+                                <button class="sort-option" data-sort="priority">Priority</button>
+                                <button class="sort-option" data-sort="date">Date</button>
+                                <button class="sort-option" data-sort="name">Name</button>
+                            </div>
+                        </div>
+                        <button id="btn-add-task" class="btn-primary btn-sm">+ New Task</button>
+                    </div>
                 </div>
                 <div class="filter-bar">
                     <div class="filter-tabs">
@@ -229,7 +240,10 @@
                     </div>
                     <div id="cal-body" class="cal-body"></div>
                 </div>
-                <h3 class="subsection-title" id="cal-day-label" style="display:none;"></h3>
+                <div class="cal-day-header" style="display:none;" id="cal-day-header">
+                    <h3 class="subsection-title" id="cal-day-label" style="margin:0;"></h3>
+                    <button id="btn-cal-add-task" class="btn-secondary btn-sm" title="Add task on this day">+ Add</button>
+                </div>
                 <div id="cal-day-tasks" class="task-list"></div>
             </section>
 
@@ -237,20 +251,33 @@
             <section id="sec-focus" class="section" style="display:none;">
                 <div class="section-header">
                     <h1>Focus Mode</h1>
+                    <button id="btn-focus-history" class="btn-secondary btn-sm">History</button>
                 </div>
                 <div class="focus-wrapper">
-                    <div class="focus-timer-ring">
+                    <p class="focus-phase-label" id="focus-phase-label">Work Session</p>
+                    <div class="focus-timer-ring" id="focus-timer-ring">
                         <svg viewBox="0 0 200 200" class="timer-svg">
                             <circle cx="100" cy="100" r="90" class="timer-track"/>
                             <circle cx="100" cy="100" r="90" class="timer-progress" id="timer-progress"/>
                         </svg>
                         <div class="timer-display" id="timer-display">25:00</div>
                     </div>
+                    <p class="focus-session-info" id="focus-session-info">Session 1 of 4</p>
                     <input type="text" id="focus-task-name" class="search-input" placeholder="What are you working on?" style="max-width:320px;text-align:center;margin:20px auto 0;">
                     <div class="focus-controls">
                         <button id="focus-start" class="btn-primary">Start</button>
                         <button id="focus-pause" class="btn-secondary" style="display:none;">Pause</button>
                         <button id="focus-reset" class="btn-secondary">Reset</button>
+                    </div>
+                    <div class="focus-today-stats" id="focus-today-stats">
+                        <div class="focus-stat">
+                            <span class="focus-stat-val" id="focus-stat-sessions">0</span>
+                            <span class="focus-stat-label">Sessions Today</span>
+                        </div>
+                        <div class="focus-stat">
+                            <span class="focus-stat-val" id="focus-stat-minutes">0</span>
+                            <span class="focus-stat-label">Minutes Focused</span>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -286,7 +313,7 @@
                             <span class="prog-summary-val" id="prog-pending">0</span>
                         </div>
                         <div class="prog-summary-row streak-row">
-                            <span class="prog-summary-label">🔥 Streak</span>
+                            <span class="prog-summary-label"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="vertical-align:-2px;margin-right:4px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 14.5c-1.93 0-3.5-1.57-3.5-3.5 0-1.55 1.17-3.82 2.45-5.54a1.38 1.38 0 012.1 0C14.33 9.18 15.5 11.45 15.5 13c0 1.93-1.57 3.5-3.5 3.5z" fill="#FF8A3D"/></svg> Streak</span>
                             <span class="prog-summary-val" id="prog-streak">0 days</span>
                         </div>
                     </div>
@@ -371,6 +398,16 @@
                     <input type="text" id="tm-category" placeholder="e.g. Work, Personal">
                 </div>
                 <div class="form-group">
+                    <label>Repeat</label>
+                    <select id="tm-repeat" class="form-select">
+                        <option value="">None</option>
+                        <option value="daily">Daily</option>
+                        <option value="weekly">Weekly</option>
+                        <option value="monthly">Monthly</option>
+                        <option value="yearly">Yearly</option>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label>Subtasks</label>
                     <div id="tm-subtasks"></div>
                     <button id="tm-add-subtask" class="btn-text">+ Add subtask</button>
@@ -425,6 +462,94 @@
                 <div style="flex:1;"></div>
                 <button id="nm-cancel" class="btn-secondary">Cancel</button>
                 <button id="nm-save" class="btn-primary">Save Note</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Focus History Modal -->
+    <div id="focus-history-modal" class="modal-overlay" style="display:none;">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Focus History</h2>
+                <button class="modal-close" id="focus-history-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="focus-history-list" class="focus-history-list"></div>
+                <div id="focus-history-empty" class="empty-state" style="display:none;">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <p>No focus sessions yet. Start one to track your progress.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Task Detail Sheet -->
+    <div id="task-detail-sheet" class="modal-overlay" style="display:none;">
+        <div class="modal detail-sheet">
+            <div class="detail-drag-handle"></div>
+            <div class="modal-header">
+                <div class="detail-header-left">
+                    <div class="task-checkbox detail-checkbox" id="detail-checkbox"></div>
+                    <h2 id="detail-title" class="detail-title-text" contenteditable="false"></h2>
+                </div>
+                <button class="modal-close" id="detail-close">&times;</button>
+            </div>
+            <div class="modal-body detail-body">
+                <div class="detail-field" id="detail-date-row">
+                    <span class="detail-label">Date</span>
+                    <span class="detail-value" id="detail-date"></span>
+                    <input type="date" id="detail-date-input" style="display:none;">
+                </div>
+                <div class="detail-field" id="detail-time-row">
+                    <span class="detail-label">Time</span>
+                    <span class="detail-value" id="detail-time"></span>
+                    <input type="time" id="detail-time-input" style="display:none;">
+                </div>
+                <div class="detail-field" id="detail-priority-row">
+                    <span class="detail-label">Priority</span>
+                    <span class="detail-value" id="detail-priority"></span>
+                </div>
+                <div class="detail-field" id="detail-category-row">
+                    <span class="detail-label">Category</span>
+                    <span class="detail-value" id="detail-category"></span>
+                    <input type="text" id="detail-category-input" style="display:none;" placeholder="e.g. Work, Personal">
+                </div>
+                <div class="detail-field" id="detail-recurrence-row">
+                    <span class="detail-label">Repeat</span>
+                    <span class="detail-value" id="detail-recurrence"></span>
+                </div>
+                <div class="detail-field detail-field-block" id="detail-subtasks-row">
+                    <span class="detail-label">Subtasks</span>
+                    <div id="detail-subtasks-list" class="detail-subtasks"></div>
+                </div>
+                <div class="detail-field detail-field-block" id="detail-notes-row">
+                    <span class="detail-label">Notes</span>
+                    <div id="detail-notes-preview" class="detail-notes"></div>
+                </div>
+            </div>
+            <div class="modal-footer detail-footer">
+                <button id="detail-delete" class="btn-danger-text">Delete</button>
+                <button id="detail-edit" class="btn-secondary">Edit</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- What's New Modal -->
+    <div id="whats-new-modal" class="modal-overlay" style="display:none;">
+        <div class="modal whats-new-sheet">
+            <div class="detail-drag-handle"></div>
+            <div class="modal-header">
+                <div>
+                    <h2>What's New</h2>
+                    <span class="whats-new-version">v3.0.0</span>
+                </div>
+                <button class="modal-close" id="whats-new-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="whats-new-list" id="whats-new-list"></div>
+            </div>
+            <div class="modal-footer" style="justify-content:center;">
+                <button id="whats-new-dismiss" class="btn-primary">Got it</button>
             </div>
         </div>
     </div>

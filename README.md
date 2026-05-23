@@ -49,7 +49,7 @@ This repo is the deployment site only. Push to `main` and the host picks it up. 
 
 ## Links
 
-- Download (APK): https://www.mediafire.com/file/4m67jdb3ktlst88/planora_major-release_v2.0.0.apk/file
+- Download (APK): https://www.mediafire.com/file/4wqi8gc6lfyg7oq/planora_major-update_v3.0.0.apk/file
 - Web app: `app/index.html`
 
 ## License
